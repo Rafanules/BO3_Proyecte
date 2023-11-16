@@ -15,6 +15,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.bo3_proyecte.databinding.FragmentFirstBinding;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -54,9 +55,9 @@ public class FirstFragment extends Fragment {
         executor.execute(() -> {
             // Aquest codi s'executa en segon pla
             Bo3_Api api = new Bo3_Api();
-            String result = api.getPersonajes();
+            ArrayList<Especialista> result = api.getPersonajes();
 
-            Log.d("DEBUG", result);
+            Log.d("DEBUG", String.valueOf(result));
         });
     }
 
@@ -66,7 +67,7 @@ public class FirstFragment extends Fragment {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_refresh) {
-            refresh();
+            //refresh();
             return true;
         }
 

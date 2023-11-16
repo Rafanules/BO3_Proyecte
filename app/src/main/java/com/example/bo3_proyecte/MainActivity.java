@@ -67,4 +67,8 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+
 }
